@@ -54,8 +54,8 @@ public class Menu {
  */
                 boolean correctName = false;
                 for (var name : Names.values()) {
-                    if (name.name().equalsIgnoreCase(input)) {
-                        correctName = true;
+                    if (name.name().equalsIgnoreCase(input)) { //Vi kollar om inputen matchar med något av djurens namn.
+                        correctName = true;                    // Om ja, correctName blir true och leder in oss i nästa if.
                         break;
                     }
                 }
@@ -74,7 +74,7 @@ public class Menu {
         }
     }
 
-    public static void generateAnimals() {
+    public static void generateAnimals() { //Vi skapar upp våra djur och lägger i en lista.
 
         Dog sixten = new Dog("Sixten", 5);
         Dog dogge = new Dog("Dogge", 10);
@@ -82,14 +82,16 @@ public class Menu {
         Cat ove = new Cat("Ove", 3);
         Snake hypno = new Snake("Hypno", 1);
 
-        animals.add(sixten);
-        animals.add(dogge);
+        animals.add(sixten);  //Skulle kunna förkortas till animals.add(new Animal(name, weight)
+        animals.add(dogge);   //Har behållit det som det står för läsbarhetens skull.
         animals.add(venus);
         animals.add(ove);
         animals.add(hypno);
+
+
     }
 
-    public static Animal getAnimal(String name) {
+    public static Animal getAnimal(String name) { //Hämtar ett djur om inparemetern name matchar djurets namn.
 
         for (var animal : animals) {
             if (animal.getName().equalsIgnoreCase(name)) {
@@ -99,7 +101,7 @@ public class Menu {
         return null;
     }
 
-    public static void printFoodAmount(Animal animal) {
+    public static void printFoodAmount(Animal animal) { //Skriver ut djurets namn, hur mycket & typ av mat.
 
         JOptionPane.showMessageDialog(null, String.format("%s ska ha %s g %s.", animal.getName(), df.format(animal.getFoodAmount()), animal.getFoodType()));
     }
