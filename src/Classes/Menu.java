@@ -103,7 +103,8 @@ public class Menu {
 
     public static void printFoodAmount(Animal animal) { //Skriver ut djurets namn, hur mycket & typ av mat.
 
-        JOptionPane.showMessageDialog(null, String.format("%s ska ha %s g %s.", animal.getName(), df.format(animal.getFoodAmount()), animal.getFoodType()));
+        JOptionPane.showMessageDialog(null, String.format("%s ska ha %s g %s.",
+                animal.getName(), df.format(animal.getFoodAmount()), animal.getFoodType()));
     }
 
     static DecimalFormat df = new DecimalFormat("#.##"); //Används för att undvika alldeles för många decimaler.
