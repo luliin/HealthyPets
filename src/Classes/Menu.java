@@ -1,16 +1,18 @@
 package Classes;
+
 import Subclasses.*;
+
 import javax.swing.*;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * Created by Julia Wigenstedt
  * Date: 2020-09-25
  * Time: 13:19
- * Project: HealhyPets
+ * Project: HealthyPets
  * Copyright: MIT
  */
 
@@ -23,13 +25,14 @@ public class Menu {
 
         boolean successfulInput = false;
 
-        while(!successfulInput) {
-        String input = JOptionPane.showInputDialog("Vilket djur vill du mata? \n" +
-                "Sixten\n" +
-                "Dogge\n" +
-                "Venus\n" +
-                "Ove\n" +
-                "Hypno");
+        while (!successfulInput) {
+            String input = JOptionPane.showInputDialog("Vilket djur vill du mata?");
+            if (input == null) {
+                JOptionPane.showMessageDialog(null, "Välkommen åter!");
+                System.exit(0);
+            } else {
+                input = input.trim();
+
 
 /*
 
@@ -49,29 +52,26 @@ public class Menu {
             }
 
  */
-            boolean correctName = false;
-            for(var name: Names.values()){
-                if(name.name().equalsIgnoreCase(input)){
-                    correctName = true;
-                    break;
-                }
-            }
-            if (correctName) {
-                switch (Names.valueOf(input.toUpperCase())) {
-                    case SIXTEN:
-                    case DOGGE:
-                    case VENUS:
-                    case OVE:
-                    case HYPNO:
-                        printFoodAmount(getAnimal(input));
-                        successfulInput = true;
+                boolean correctName = false;
+                for (var name : Names.values()) {
+                    if (name.name().equalsIgnoreCase(input)) {
+                        correctName = true;
                         break;
+                    }
                 }
-            } else {
-                JOptionPane.showMessageDialog(null, "Namnet som du skrivit in finns inte på hotellet. Försök igen!");
+                if (correctName) {
+                    switch (Names.valueOf(input.toUpperCase())) {
+                        case SIXTEN, DOGGE, VENUS, OVE, HYPNO -> {
+                            printFoodAmount(Objects.requireNonNull(getAnimal(input)));
+                            successfulInput = true;
+                        }
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(null, input + " finns inte på hotellet. Försök igen!\n" +
+                            "Djur på hotellet: Sixten, Dogge, Venus, Ove och Hypno.");
+                }
             }
         }
-
     }
 
     public static void animalsInHotel() {
@@ -87,7 +87,6 @@ public class Menu {
         animals.add(venus);
         animals.add(ove);
         animals.add(hypno);
-
     }
 
     public static Animal getAnimal(String name) {
@@ -100,7 +99,7 @@ public class Menu {
         return null;
     }
 
-    public static void printFoodAmount(Animal animal){
+    public static void printFoodAmount(Animal animal) {
 
         JOptionPane.showMessageDialog(null, String.format("%s ska ha %s g %s.", animal.getName(), df.format(animal.getFoodAmount()), animal.getFoodType()));
     }

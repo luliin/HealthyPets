@@ -6,7 +6,7 @@ import Subclasses.Food;
  * Created by Julia Wigenstedt
  * Date: 2020-09-25
  * Time: 12:45
- * Project: HealhyPets
+ * Project: HealthyPets
  * Copyright: MIT
  *
  * Abstrakt superklass som vi använder för att ärva ifrån, så vi dessutom kan lägga olika subklasser i samma lista.

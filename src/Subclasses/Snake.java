@@ -5,7 +5,7 @@ import Classes.*;
  * Created by Julia Wigenstedt
  * Date: 2020-09-25
  * Time: 12:51
- * Project: HealhyPets
+ * Project: HealthyPets
  * Copyright: MIT
  */
 

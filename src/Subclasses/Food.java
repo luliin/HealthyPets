@@ -4,7 +4,7 @@ package Subclasses;
  * Created by Julia Wigenstedt
  * Date: 2020-09-25
  * Time: 12:52
- * Project: HealhyPets
+ * Project: HealthyPets
  * Copyright: MIT
  */
 
