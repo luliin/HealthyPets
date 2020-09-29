@@ -13,7 +13,7 @@ import Subclasses.Food;
  */
 
 public abstract class Animal implements IFoodCalculator { //Implementerar IFoodCalculator, så alla subklasser implementerar den metoden som finns där i.
-    private String name;
+    private String name;  //Inkapsling
     private double weightInKilos;
     private double weightInGrams;
     protected Food foodType;
@@ -24,9 +24,10 @@ public abstract class Animal implements IFoodCalculator { //Implementerar IFoodC
         weightInGrams = this.weightInKilos*1000;
     }
 
-    public String getName(){
+    public String getName(){  //Behövs för att subklasserna ska kunna komma åt dessa värden. Gäller alla getters nedan.
         return name;
     }
+
     public double getWeightInKilos(){
         return weightInKilos;
     }
