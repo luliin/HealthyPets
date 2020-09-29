@@ -21,7 +21,7 @@ public class Menu {
 
     public static void menu() throws IllegalArgumentException {
 
-        animalsInHotel();
+        generateAnimals();
 
         boolean successfulInput = false;
 
@@ -74,7 +74,7 @@ public class Menu {
         }
     }
 
-    public static void animalsInHotel() {
+    public static void generateAnimals() {
 
         Dog sixten = new Dog("Sixten", 5);
         Dog dogge = new Dog("Dogge", 10);
