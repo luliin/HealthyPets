@@ -63,7 +63,7 @@ public class Menu {
                     switch (Names.valueOf(input.toUpperCase())) {
                         case SIXTEN, DOGGE, VENUS, OVE, HYPNO -> {
                             printFoodAmount(Objects.requireNonNull(getAnimal(input)));
-                            successfulInput = true;
+                            successfulInput = true;  //Bryter while-loopen.
                         }
                     }
                 } else {
