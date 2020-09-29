@@ -24,18 +24,18 @@ public abstract class Animal implements IFoodCalculator { //Implementerar IFoodC
         weightInGrams = this.weightInKilos*1000;
     }
 
-    public String getName(){  //Behövs för att subklasserna ska kunna komma åt dessa värden. Gäller alla getters nedan.
+    public String getName(){  //Behövs för att subklasserna ska kunna komma åt dessa värden.
         return name;
     }
 
-    public double getWeightInKilos(){
+    public double getWeightInKilos(){   //Behövs för att subklasserna ska kunna komma åt dessa värden.
         return weightInKilos;
     }
 
-    public double getWeightInGrams() {
+    public double getWeightInGrams() { //Behövs för att subklasserna ska kunna komma åt dessa värden.
         return weightInGrams;
     }
 
-    public abstract String getFoodType();
+    public abstract String getFoodType();  //polymorfism -> Vi sätter olika returns i varje subklass.
 
 }
