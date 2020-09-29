@@ -107,5 +107,6 @@ public class Menu {
     }
 
     static DecimalFormat df = new DecimalFormat("#.##"); //Används för att undvika alldeles för många decimaler.
+                                                                //Tar också bort decimal isället för att skriva ex "2.0"
 
 }
